@@ -10,7 +10,7 @@ export class PeachApi implements ICredentialType {
 	name = 'peachApi';
 
 	displayName = 'Peach API';
-	icon: Icon = 'file:peach.png';
+	icon: Icon = 'file:peach.svg';
 
 	documentationUrl = 'https://docs.trypeach.ai/api-reference/authentication';
 

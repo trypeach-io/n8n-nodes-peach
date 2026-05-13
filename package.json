@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-peach",
+	"name": "@peachai/n8n-nodes-peach",
 	"version": "0.1.1",
 	"description": "n8n node for Peach WhatsApp Platform",
 	"license": "MIT",

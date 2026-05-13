@@ -164,12 +164,16 @@ export const contactFields: INodeProperties[] = [
 				value: 'allow_everything',
 			},
 			{
-				name: 'Allow Transactional Only',
-				value: 'allow_transactional_only',
+				name: 'Disallow Marketing',
+				value: 'disallow_marketing',
 			},
 			{
-				name: 'Block Everything',
-				value: 'block_everything',
+				name: 'Disallow Automated Messaging',
+				value: 'disallow_automated_messaging',
+			},
+			{
+				name: 'Mute All',
+				value: 'mute_all',
 			},
 		],
 		default: 'allow_everything',

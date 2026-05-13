@@ -20,31 +20,21 @@ export const messageOperations: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '/api/v1/template_messages',
+						url: '/api/v1/events',
 						body: {
-							to: '={{$parameter["to"]}}',
-							template_name: '={{$parameter["templateName"]}}',
-							liquid_values: '={{$parameter["liquidValues"]}}',
-						},
-					},
-				},
-			},
-			{
-				name: 'Send Transactional Message',
-				value: 'sendTransactional',
-				description: 'Send a simplified template message (transactional style)',
-				action: 'Send a transactional message',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/api/v1/transactional_messages',
-						body: {
-							template_name: '={{$parameter["templateName"]}}',
-							to: {
+							event_type: 'send_template_message',
+							contact: {
 								phone_number: '={{$parameter["to"]}}',
-								name: '={{$parameter["name"]}}',
+								name: '={{$parameter["additionalFields"]["contactName"]}}',
 							},
-							arguments: '={{$parameter["arguments"]}}',
+							template_message: {
+								whats_app_template_id: '={{$parameter["templateId"]}}',
+								liquid_values: '={{$parameter["liquidValues"]}}',
+								business_phone_number: '={{$parameter["additionalFields"]["businessPhoneNumber"]}}',
+								reply_automation: {
+									ai_agent_id: '={{$parameter["additionalFields"]["aiAgentId"]}}',
+								},
+							},
 						},
 					},
 				},
@@ -82,7 +72,7 @@ export const messageFields: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['message'],
-				operation: ['sendTemplate', 'sendTransactional'],
+				operation: ['sendTemplate'],
 			},
 		},
 		default: '',
@@ -128,18 +118,18 @@ export const messageFields: INodeProperties[] = [
 		description: 'Filter messages by the business (WABA) phone number',
 	},
 	{
-		displayName: 'Template Name',
-		name: 'templateName',
+		displayName: 'Template ID',
+		name: 'templateId',
 		type: 'string',
 		required: true,
 		displayOptions: {
 			show: {
 				resource: ['message'],
-				operation: ['sendTemplate', 'sendTransactional'],
+				operation: ['sendTemplate'],
 			},
 		},
 		default: '',
-		description: 'The name of the WhatsApp template to send',
+		description: 'The ID of the WhatsApp template to send',
 	},
 	{
 		displayName: 'Liquid Values',
@@ -155,30 +145,40 @@ export const messageFields: INodeProperties[] = [
 		description: 'The variables for the template (e.g., {"name": "John"}) in JSON format',
 	},
 	{
-		displayName: 'Recipient Name',
-		name: 'name',
-		type: 'string',
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
 		displayOptions: {
 			show: {
 				resource: ['message'],
-				operation: ['sendTransactional'],
+				operation: ['sendTemplate'],
 			},
 		},
-		default: '',
-		description: 'The name of the recipient (optional)',
-	},
-	{
-		displayName: 'Arguments',
-		name: 'arguments',
-		type: 'json',
-		displayOptions: {
-			show: {
-				resource: ['message'],
-				operation: ['sendTransactional'],
+		options: [
+			{
+				displayName: 'Contact Name',
+				name: 'contactName',
+				type: 'string',
+				default: '',
+				description: 'The name of the recipient contact',
 			},
-		},
-		default: '{}',
-		description: 'The arguments (variables) for the transactional template in JSON format',
+			{
+				displayName: 'Business Phone Number',
+				name: 'businessPhoneNumber',
+				type: 'string',
+				default: '',
+				description: 'The WhatsApp Business phone number to use to send the template message from',
+			},
+			{
+				displayName: 'AI Agent ID',
+				name: 'aiAgentId',
+				type: 'string',
+				default: '',
+				description: 'The ID of the AI Agent to handle replies',
+			},
+		],
 	},
 	{
 		displayName: 'Direction',

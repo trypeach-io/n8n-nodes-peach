@@ -28,7 +28,7 @@ export class PeachApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				'X-Account-Api-Key': '={{$credentials?.apiKey}}',
+				Authorization: '={{$credentials?.apiKey}}',
 			},
 		},
 	};
@@ -36,7 +36,7 @@ export class PeachApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://app.trypeach.ai',
-			url: '/api/v1/account',
+			url: '/api/v1/conversations',
 			method: 'GET',
 		},
 	};

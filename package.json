@@ -1,0 +1,57 @@
+{
+	"name": "n8n-nodes-peach",
+	"version": "0.1.0",
+	"description": "n8n node for Peach WhatsApp Platform",
+	"license": "MIT",
+	"homepage": "https://trypeach.ai",
+	"keywords": [
+		"n8n-community-node-package",
+		"peach",
+		"whatsapp"
+	],
+	"author": {
+		"name": "Peach Team",
+		"email": "support@trypeach.ai"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trypeach-io/n8n-nodes-peach.git"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/PeachApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Peach/Peach.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "*",
+		"eslint": "9.39.4",
+		"n8n-workflow": "*",
+		"prettier": "3.8.3",
+		"release-it": "20.0.1",
+		"typescript": "5.9.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"dependencies": {
+		"@langchain/community": "^1.1.28",
+		"langsmith": "^0.6.3"
+	}
+}

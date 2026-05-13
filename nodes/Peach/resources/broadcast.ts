@@ -245,6 +245,13 @@ export const broadcastFields: INodeProperties[] = [
 		},
 		options: [
 			{
+				displayName: 'AI Agent ID',
+				name: 'aiAgentId',
+				type: 'string',
+				default: '',
+				description: 'The ID of the AI Agent to handle replies',
+			},
+			{
 				displayName: 'Business Phone Number',
 				name: 'businessPhoneNumber',
 				type: 'string',
@@ -259,13 +266,6 @@ export const broadcastFields: INodeProperties[] = [
 				description: 'When the broadcast should be launched',
 			},
 			{
-				displayName: 'Skip Phone Validation',
-				name: 'skipPhoneValidation',
-				type: 'boolean',
-				default: false,
-				description: 'Whether to skip phone number format validation',
-			},
-			{
 				displayName: 'Skip Liquid Values Validation',
 				name: 'skipLiquidValuesValidation',
 				type: 'boolean',
@@ -273,11 +273,11 @@ export const broadcastFields: INodeProperties[] = [
 				description: 'Whether to skip liquid values validation',
 			},
 			{
-				displayName: 'AI Agent ID',
-				name: 'aiAgentId',
-				type: 'string',
-				default: '',
-				description: 'The ID of the AI Agent to handle replies',
+				displayName: 'Skip Phone Validation',
+				name: 'skipPhoneValidation',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to skip phone number format validation',
 			},
 		],
 	},
@@ -297,6 +297,10 @@ export const broadcastFields: INodeProperties[] = [
 				value: '',
 			},
 			{
+				name: 'Archived',
+				value: 'archived',
+			},
+			{
 				name: 'Draft',
 				value: 'draft',
 			},
@@ -311,10 +315,6 @@ export const broadcastFields: INodeProperties[] = [
 			{
 				name: 'Sent',
 				value: 'sent',
-			},
-			{
-				name: 'Archived',
-				value: 'archived',
 			},
 		],
 		default: '',

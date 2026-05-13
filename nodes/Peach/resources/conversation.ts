@@ -83,20 +83,20 @@ export const conversationFields: INodeProperties[] = [
 				value: '',
 			},
 			{
-				name: 'Open',
-				value: 'open',
-			},
-			{
-				name: 'Pending',
-				value: 'pending',
-			},
-			{
 				name: 'Awaiting Customer Response',
 				value: 'awaiting_customer_response',
 			},
 			{
 				name: 'Closed',
 				value: 'closed',
+			},
+			{
+				name: 'Open',
+				value: 'open',
+			},
+			{
+				name: 'Pending',
+				value: 'pending',
 			},
 		],
 		default: '',
@@ -113,20 +113,20 @@ export const conversationFields: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Open',
-				value: 'open',
-			},
-			{
-				name: 'Pending',
-				value: 'pending',
-			},
-			{
 				name: 'Awaiting Customer Response',
 				value: 'awaiting_customer_response',
 			},
 			{
 				name: 'Closed',
 				value: 'closed',
+			},
+			{
+				name: 'Open',
+				value: 'open',
+			},
+			{
+				name: 'Pending',
+				value: 'pending',
 			},
 		],
 		default: 'closed',
@@ -155,7 +155,7 @@ export const conversationFields: INodeProperties[] = [
 			},
 		},
 		default: false,
-		description: 'Filter conversations by call permission status',
+		description: 'Whether to filter conversations by call permission status',
 	},
 	{
 		displayName: 'Updated Since',
@@ -198,20 +198,20 @@ export const conversationFields: INodeProperties[] = [
 				value: '',
 			},
 			{
-				name: 'Message',
-				value: 'message',
+				name: 'Assignment',
+				value: 'assignment',
 			},
 			{
 				name: 'Escalation',
 				value: 'escalation',
 			},
 			{
-				name: 'Status Change',
-				value: 'status_change',
+				name: 'Message',
+				value: 'message',
 			},
 			{
-				name: 'Assignment',
-				value: 'assignment',
+				name: 'Status Change',
+				value: 'status_change',
 			},
 		],
 		default: '',

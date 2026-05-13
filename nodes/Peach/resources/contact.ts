@@ -25,9 +25,9 @@ export const contactOperations: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'Upsert',
+				name: 'Create or Update',
 				value: 'upsert',
-				description: 'Create or update a contact',
+				description: 'Create a new record, or update the current one if it already exists (upsert)',
 				action: 'Create or update a contact',
 				routing: {
 					request: {
@@ -113,6 +113,7 @@ export const contactFields: INodeProperties[] = [
 		displayName: 'Email',
 		name: 'email',
 		type: 'string',
+		placeholder: 'name@email.com',
 		displayOptions: {
 			show: {
 				resource: ['contact'],

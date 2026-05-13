@@ -13,16 +13,12 @@ export const resourceOperations: INodeProperties[] = [
 		noDataExpression: true,
 		options: [
 			{
-				name: 'Contact',
-				value: 'contact',
-			},
-			{
-				name: 'Message',
-				value: 'message',
-			},
-			{
 				name: 'Broadcast',
 				value: 'broadcast',
+			},
+			{
+				name: 'Contact',
+				value: 'contact',
 			},
 			{
 				name: 'Conversation',
@@ -31,6 +27,10 @@ export const resourceOperations: INodeProperties[] = [
 			{
 				name: 'Media',
 				value: 'media',
+			},
+			{
+				name: 'Message',
+				value: 'message',
 			},
 		],
 		default: 'contact',

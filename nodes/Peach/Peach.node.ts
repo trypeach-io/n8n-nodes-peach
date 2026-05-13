@@ -5,7 +5,7 @@ export class Peach implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Peach',
 		name: 'peach',
-		icon: 'file:peach.svg',
+		icon: 'file:peach.png',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

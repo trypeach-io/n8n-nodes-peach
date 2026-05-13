@@ -1,7 +1,9 @@
 {
 	"name": "@peachai/n8n-nodes-peach",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "n8n node for Peach WhatsApp Platform",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"license": "MIT",
 	"homepage": "https://trypeach.ai",
 	"keywords": [

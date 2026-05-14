@@ -1,6 +1,6 @@
 {
 	"name": "@peachai/n8n-nodes-peach",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "n8n node for Peach WhatsApp Platform",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -52,9 +52,5 @@
 	"peerDependencies": {
 		"n8n-workflow": "*"
 	},
-	"dependencies": {
-		"@langchain/community": "^1.1.28",
-		"@langchain/core": "^1.1.46",
-		"langsmith": "^0.6.3"
-	}
+	"dependencies": {}
 }
